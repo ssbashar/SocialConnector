@@ -11,6 +11,9 @@ const posts = require('./routes/api/posts');
 // creating an instance of express
 const app = express(); 
 
+// Let's write our first route
+app.get('/', (req, res) => res.send('Hello World'));
+
 // DB config
 const  db = require('./keys').mongoURI
 // connect to mongoDB
@@ -28,9 +31,6 @@ require('./config/passport')(passport);
 // Body parser middleware
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-
-// Let's write our first route
-app.get('/', (req, res) => res.send('Hello World'));
 
 app.use('/api/users', users);
 app.use('/api/profile', profile);
