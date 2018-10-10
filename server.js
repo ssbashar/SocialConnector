@@ -28,15 +28,15 @@ app.use('/api/users', users);
 app.use('/api/profile', profile);
 app.use('/api/posts', posts);
 
+// Body parser middleware
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
 // Passport middleware
 app.use(passport.initialize());
 
 // Passport config
 require('./config/passport')(passport);
-
-// Body parser middleware
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
 
 const port = 8000;
 app.listen(port, () => console.log(`Server running on port ${port}`) );
