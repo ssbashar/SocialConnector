@@ -7,6 +7,8 @@ const Profile = require('../../models/Profile');
 // Load user model
 const User = require('../../models/User');
 
+//router.get('/test', (req, res) => res.json({msg: 'Profile works'}));
+
 // @route GET api/profile
 // @desc Get current user profile
 // @access Private
@@ -85,6 +87,5 @@ router.post('/', passport.authenticate('jwt', {session: false}),
       });
   }
 )
-//router.get('/test', (req, res) => res.json({msg: 'Profile works'}));
 
 module.exports = router;
