@@ -12,7 +12,7 @@ const posts = require('./routes/api/posts');
 const app = express(); 
 
 // Let's write our first route
-app.get('/', (req, res) => res.send('Hello World'));
+//app.get('/', (req, res) => res.send('Hello World'));
 
 // DB config
 const  db = require('./keys').mongoURI
